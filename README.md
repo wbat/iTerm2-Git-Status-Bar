@@ -47,8 +47,8 @@ Additionally, the script allows you to toggle the display of individual features
 8. Choose "Interpolated String" from the list.
 
 9. In the "String Value" field of the newly added component, enter the following text:
-```
-(user.gitInfo)
+```bash
+\(user.gitInfo)
 ```
 
 10. Close the Preferences window.
@@ -58,7 +58,6 @@ The Git information should now be displayed in the iTerm2 status bar.
 ## Customization
 
 You can toggle the display of individual features by setting the corresponding configuration variable to `true` or `false` in the `~/.bashrc` file. For example, to disable the display of the Git user name and email, set the `GIT_SHOW_USER_INFO` variable to `false`:
-
 ```bash
 GIT_SHOW_USER_INFO=false
 ```
