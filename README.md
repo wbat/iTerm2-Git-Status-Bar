@@ -11,7 +11,7 @@ The script includes information like:
 - Number of staged commits on the remote repo
 - Number of files that differ between the local and remote branch
 - Presence of uncommitted changes
-- Presence of untracked files
+- Presence of and Number of untracked files
 
 Additionally, the script allows you to toggle the display of individual features.
 
