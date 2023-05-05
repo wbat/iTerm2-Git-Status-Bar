@@ -15,6 +15,9 @@ The script includes information like:
 
 Additionally, the script allows you to toggle the display of individual features.
 
+## Example
+![Example of Git status bar in iTerm2](/example.png?raw=true)
+
 ## Installation
 
 1. Copy the contents of the `bashrc_snippet.sh` file from this repository.
