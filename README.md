@@ -1,14 +1,14 @@
 # iTerm2 Git Status Bar Script
 
-This repository contains a custom script that provides a more reliable and full-featured Git status bar component for iTerm2. The original "git state" menu bar component would sometimes not work or not show at all. To address this issue, this custom script displays various Git information in the iTerm2 status bar, giving users a quick overview of their repository's state.
+This repository contains a custom script that provides a more reliable and full-featured Git status bar component for iTerm2. The original "git state" menu bar component would sometimes not work or not show at all. To address this issue, as well as expand upon the original, this custom script was made. This custom script displays various Git information in the iTerm2 status bar, giving users a quick overview of their repository's state.
 
 The script includes information like:
 
+- Git user name and email
 - Current branch
 - Number of commits ahead and behind the remote branch
 - Number of staged commits
 - Number of staged commits on the remote repo
-- Git user name and email
 - Number of files that differ between the local and remote branch
 - Presence of uncommitted changes
 - Presence of untracked files
