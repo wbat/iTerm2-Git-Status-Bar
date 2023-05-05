@@ -17,11 +17,14 @@ get_git_info() {
 	local output=""
 
 	if is_git_repository; then
-		local current_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+		local current_branch
+		current_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
 
 		if [ "$GIT_SHOW_USER_INFO" = true ]; then
-			local user_name=$(git config user.name)
-			local user_email=$(git config user.email)
+			local user_name
+			user_name=$(git config user.name)
+			local user_email
+			user_email=$(git config user.email)
 			output+="($user_name <$user_email>) "
 		fi
 
@@ -30,21 +33,24 @@ get_git_info() {
 		fi
 
 		if [ "$GIT_SHOW_COMMITS" = true ]; then
-			local commits_ahead=$(git rev-list --count --left-only HEAD...@'{u}' 2>/dev/null)
+			local commits_ahead
+			commits_ahead=$(git rev-list --count --left-only HEAD...@'{u}' 2>/dev/null)
 			if [ "$commits_ahead" != "0" ]; then
 				output+="↑$commits_ahead "
 			fi
 		fi
 
 		if [ "$GIT_SHOW_STAGED_COMMITS" = true ]; then
-			local commits_behind=$(git rev-list --count --right-only HEAD...@'{u}' 2>/dev/null)
+			local commits_behind
+			commits_behind=$(git rev-list --count --right-only HEAD...@'{u}' 2>/dev/null)
 			if [ "$commits_behind" != "0" ]; then
 				output+="↓$commits_behind "
 			fi
 		fi
 
 		if [ "$GIT_SHOW_FILES_DIFF_COUNT" = true ]; then
-			local files_diff_count=$(git diff --name-only "$current_branch" "origin/$current_branch" 2>/dev/null | wc -l | tr -d '[:space:]')
+			local files_diff_count
+			files_diff_count=$(git diff --name-only "$current_branch" "origin/$current_branch" 2>/dev/null | wc -l | tr -d '[:space:]')
 			if [ "$files_diff_count" != "0" ]; then
 				output+="Δ$files_diff_count "
 			fi
@@ -55,7 +61,8 @@ get_git_info() {
 		fi
 
 		if [ "$GIT_SHOW_UNTRACKED_FILES" = true ]; then
-			local untracked_files=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d '[:space:]')
+			local untracked_files
+			untracked_files=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d '[:space:]')
 			if [ "$untracked_files" != "0" ]; then
 				output+="✚$untracked_files "
 			fi
