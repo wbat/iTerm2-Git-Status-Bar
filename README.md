@@ -27,7 +27,16 @@ The script includes information like:
 Additionally, the script allows you to toggle the display of individual features.
 
 ## Example
+
 ![Example of Git status bar in iTerm2](/example.png?raw=true)
+
+## Requirements
+
+1. [Bash](https://www.gnu.org/software/bash/)
+
+2. [Awk](https://www.gnu.org/software/gawk/manual/gawk.html)
+
+3. [Sed](https://www.gnu.org/software/sed/manual/sed.html)
 
 ## Installation
 
