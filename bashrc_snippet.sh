@@ -62,7 +62,7 @@ get_git_info() {
 
 		if [ "$GIT_SHOW_UNTRACKED_FILES" = true ]; then
 			local untracked_files
-			untracked_files=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d '[:space:]')
+			untracked_files=$(git status -u 2>/dev/null | awk '/^  \(use "git add/,/^nothing added/{if (!/^  \(use "git add/ && !/^nothing added/ && !/^$/) print}' | sed '/^$/d' | wc -l | tr -d '[:space:]')
 			if [ "$untracked_files" != "0" ]; then
 				output+="✚$untracked_files "
 			fi
