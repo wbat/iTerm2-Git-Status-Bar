@@ -10,7 +10,7 @@ GIT_SHOW_UNCOMMITTED_CHANGES=true
 GIT_SHOW_UNTRACKED_FILES=true
 
 is_git_repository() {
-	git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [ -d .git ]
+	git rev-parse --is-inside-work-tree >/dev/null 2>&1 || [ -d .git ]
 }
 
 get_git_info() {
