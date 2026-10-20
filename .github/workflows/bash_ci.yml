@@ -3,7 +3,7 @@ on:
   - pull_request
 jobs:
   sh-checker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest became Ubuntu 26.04 on 2026-10-19 (see the PR that added this line)
     steps:
       - uses: actions/checkout@v3
       - name: Run the sh-checker
